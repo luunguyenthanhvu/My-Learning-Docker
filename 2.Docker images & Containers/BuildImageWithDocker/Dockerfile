@@ -15,10 +15,16 @@ ENV APP_HOME=/app
 # Tạo thư mục làm việc bên trong container
 WORKDIR $APP_HOME
 
-# Sao chép toàn bộ mã nguồn vào thư mục làm việc
-COPY . .
+# Sao chép các file cấu hình Gradle trước
+COPY settings.gradle build.gradle ./
 
 # Cài đặt các dependencies và build ứng dụng
+RUN gradle build --no-daemon
+
+# Sao chép toàn bộ source code
+COPY . .
+
+# Build ứng dụng
 RUN gradle build --no-daemon
 
 # Mở cổng 8080 trên container
