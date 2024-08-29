@@ -1,0 +1,8 @@
+1. What is docker
+Docker is a CONTAINER technology: A tool for creating and managing containers.
+
+Container: A standardized unit of software 
+
+The same container always yields the exact same application and execution behavior! No matter where or whom it might be executed.
+Support for Containers is built into modern operating systems!
+Docker simplifes the creation and management of such containers
