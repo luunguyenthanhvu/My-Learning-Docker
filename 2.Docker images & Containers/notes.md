@@ -1,3 +1,7 @@
+# Container 
+  * docker run -p localport:machineport image_id : build container
+  * docker start contaienr_id/name : run container
+
 # Images
   * docker images : xem các image
   * docker rmi image_id : xóa các image
