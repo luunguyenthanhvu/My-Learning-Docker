@@ -34,3 +34,13 @@
   * Or we can read the log of detached mode with: 
      - `docker logs container-id/container-name` ( we can see what was print )
      -	`docker logs –f container-id/container-name` ( we can see and listening )
+   
+ # Hiển thị thông tin chi tiết về một Docker image
+   * `docker image inspect <image_name_or_id>` : sử dụng để hiển thị thông tin chi tiết về một Docker image cụ thể.
+   * Các thông tin bao gồm như :
+      - ID của image
+      - Tên và tag của image
+      - Các lớp (layers) của image
+      - Cấu hình của image (như môi trường, biến, lệnh khởi chạy mặc định, v.v.)
+      - Dung lượng của image
+      - Thông tin về các thông số build
