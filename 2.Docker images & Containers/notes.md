@@ -1,24 +1,38 @@
-# Container 
-  * `docker run -p localport:machineport image_id` : build container
-  * `docker start contaienr_id/name` : run container
+# Container & Image trong docker
+<details>
+  <summary>
+  <b>Container: </b>
+  </summary>
+  
+  + <b> Các lệnh cơ bản: </b>
+      - `docker run -p localport:machineport image_id` : build container
+      - `docker start contaienr_id/name` : run container
+  + <b> Xóa 1 Container: </b>
+      - Không thể xóa 1 container đang chạy -> docker stop container_id/container_name
+      - Xóa 1-n: docker rm contgainer_id/container_name contgainer_id/container_name .....
+  + <b> Xóa 1 Container tự động: </b>
+      - `docker run -p localport:machineport -d --rm image_id`: Sẽ tự động xóa container này sau khi chạy xong  
+      => phù hợp cho việc test
+</details>
 
-# Images
+<details>
+  <summary>
+  <b>Images: </b>Các lệnh cơ bản 
+  </summary>
+  
   * `docker images` : xem các image
   * `docker rmi image_id` : xóa các image
       - Nếu container đang  sử dụng image đó -> xóa container trước
       - EX: ![Example Image](./image%20for%20note/img-confict-with-container.png)
   * `docker prune` : xóa toàn bộ image
-
-# Xóa 1 Container
-  * Không thể xóa 1 container đang chạy -> docker stop container_id/container_name
-  * Xóa 1-n: docker rm contgainer_id/container_name contgainer_id/container_name .....
-
-# Xóa 1 container tự động
-* `docker run -p localport:machineport -d --rm image_id`: Sẽ tự động xóa container này sau khi chạy xong  
-   => phù hợp cho việc test
+</details>
 
 
-# Attached & Detached mode
+<details>
+  <summary>
+  <b>Attached & Detached mode </b>
+  </summary>
+  
   * When using the “run” command -> attached mode is default
   *	When using the “start” command -> detached mode is default
 
@@ -34,8 +48,13 @@
   * Or we can read the log of detached mode with: 
      - `docker logs container-id/container-name` ( we can see what was print )
      -	`docker logs –f container-id/container-name` ( we can see and listening )
-   
- # Hiển thị thông tin chi tiết về một Docker image
+</details>
+
+<details>
+  <summary>
+  <b>Hiển thị thông tin chi tiết về một Docker image </b>
+  </summary>
+  
    * `docker image inspect <image_name_or_id>` : sử dụng để hiển thị thông tin chi tiết về một Docker image cụ thể.
    * Các thông tin bao gồm như :
       - ID của image
@@ -44,3 +63,7 @@
       - Cấu hình của image (như môi trường, biến, lệnh khởi chạy mặc định, v.v.)
       - Dung lượng của image
       - Thông tin về các thông số build
+</details>
+
+   
+
