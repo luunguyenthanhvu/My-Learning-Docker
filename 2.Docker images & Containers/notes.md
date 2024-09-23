@@ -13,6 +13,13 @@
   + <b> Xóa 1 Container tự động: </b>
       - `docker run -p localport:machineport -d --rm image_id`: Sẽ tự động xóa container này sau khi chạy xong  
       => phù hợp cho việc test
+  + <b> Copy 1 file vào container: </b>
+      - `docker cp <đường_dẫn_nguồn> <tên_container>:<đường_dẫn_đích_trong_container>`: Sao chép một tệp hoặc thư mục từ máy chủ vào container Docker
+      - EX: `docker cp /path/test/file.txt my_container:/path/test/`
+    
+  + <b> Copy từ Container Ra Máy Chủ: </b>
+      - `docker cp <tên_container>:<đường_dẫn_trong_container> <đường_dẫn_đích_trên_máy_chủ>`: Sao chép một tệp hoặc thư mục từ máy chủ vào container Docker
+      - EX: `docker cp my_container:/path/test/file.txt /path/test/`
 </details>
 
 <details>
