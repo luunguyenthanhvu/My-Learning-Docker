@@ -24,7 +24,7 @@
   * `docker rmi image_id` : xóa các image
       - Nếu container đang  sử dụng image đó -> xóa container trước
       - EX: ![Example Image](./image%20for%20note/img-confict-with-container.png)
-  * `docker prune` : xóa toàn bộ image
+  * `docker image prune` : xóa toàn bộ image
 </details>
 
 
