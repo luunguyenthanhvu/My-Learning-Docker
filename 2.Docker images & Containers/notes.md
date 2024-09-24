@@ -18,7 +18,7 @@
       - EX: `docker cp /path/test/file.txt my_container:/path/test/`
     
   + <b> Copy từ Container Ra Máy Chủ: </b>
-      - `docker cp <tên_container>:<đường_dẫn_trong_container> <đường_dẫn_đích_trên_máy_chủ>`: Sao chép một tệp hoặc thư mục từ máy chủ vào container Docker
+      - `docker cp <tên_container>:<đường_dẫn_trong_container> <đường_dẫn_đích_trên_máy_chủ>`: Sao chép một tệp hoặc thư mục từ container Docker ra máy chủ 
       - EX: `docker cp my_container:/path/test/file.txt /path/test/`
 </details>
 
