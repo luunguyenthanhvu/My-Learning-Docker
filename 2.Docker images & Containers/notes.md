@@ -72,5 +72,46 @@
       - Thông tin về các thông số build
 </details>
 
-   
+<details>
+  <summary>
+  <b>Naming & Tagging Containers and Images </b>
+  </summary>
+
+  1. Naming trong Docker:
+        * <b> Tên của Image: </b> Khi tạo một image từ Dockerfile hoặc tải xuống từ Docker Hub, bạn có thể chỉ định tên cho image. Điều này giúp bạn dễ dàng tìm kiếm và sử dụng lại image.
+             - Cú pháp: `[repository]/[image_name]`
+             - EX: `myrepo/myapp` , trong đó `myrepo` là tên repository (kho lưu trữ), còn `myapp` là tên image.
+        * <b> Tên của Container: </b> Khi khởi tạo một container từ image, Docker tự động tạo ra một tên ngẫu nhiên cho container. Tuy nhiên, bạn có thể cung cấp tên cụ thể để dễ quản lý hơn.
+             - Cú pháp: `docker run --name [container_name] [image_name]`
+             - EX: `docker run --name my-container myrepo/myapp` : tạo một container có tên là my-container.
+  2. Tagging trong Docker:
+        
+        * <b> Tag của Image: </b> Tag là một cách để gắn nhãn phiên bản hoặc biến thể của một image. Ví dụ, nếu bạn có một phiên bản mới của image, bạn có thể gắn tag để xác định đó là phiên bản nào. 
+            - Cú pháp: `[image_name]:[tag]`
+            - EX: `myrepo/myapp:1.0` hoặc `myrepo/myapp:latest`. `latest` thường được sử dụng cho phiên bản mới nhất của image.
+        * <b> Sử dụng tag: </b>
+            - Khi build image: `docker build -t [repository]/[image_name]:[tag] . `
+            - Ví dụ: `docker build -t myrepo/myapp:1.0 `. để tạo image với tag 1.0.
+            - Khi chạy container từ image có tag: `docker run [image_name]:[tag]`
+            - Ví dụ: `docker run myrepo/myapp:1.0`.
+        
+</details>
+
+
+<details>
+  <summary>
+  <b>Sharing images & Container</b>
+  </summary>
+
+  - `docker push [dockerhub_name]/[image_name]` : Push image -> docker hub     
+</details>
+
+<details>
+  <summary>
+  <b>Pulling & Using Shared Images</b>
+  </summary>
+
+  - `docker pull [dockerhub_name]/[image_name]` : Push image -> docker hub     
+</details>
+
 
