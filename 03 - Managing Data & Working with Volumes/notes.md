@@ -30,7 +30,7 @@
               + `/path/on/host` : Thư mục trên máy chủ mà bạn muốn gắn.
               + `/path/in/container` : Thư mục tương ứng trong container.
       4. So sánh giữa volumes và bind mounts:
-     
+           ![Example Image](./image-for-notes/volume_&_bindmounts.png)
       5. Ví dụ cụ thể:
          - Giả sử bạn có một ứng dụng web lưu trữ dữ liệu vào thư mục /data bên trong container và bạn muốn dữ liệu được lưu trữ bền vững trên máy chủ của bạn. Bạn có thể sử dụng volume như sau:
               + `docker run -d -v my-volume:/data my-web-app`
