@@ -36,4 +36,9 @@
               + `docker run -d -v my-volume:/data my-web-app`
          - Nếu bạn muốn sử dụng một thư mục cụ thể trên máy chủ (ví dụ /home/user/data), bạn có thể sử dụng bind mount:
               + `docker run -d -v /home/user/data:/data my-web-app`
+
+## Lưu ý:
+  - Anonymous Volume sẽ bị xóa khi container shutdown
+- Volume được đặt tên sẽ không tự động xóa khi container shutdown
+        + EX: `docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback feedback-node:volumes`  
 </details>
