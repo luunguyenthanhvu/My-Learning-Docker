@@ -69,5 +69,5 @@
 </details>
 
 # Volume Comparison
-   ![Example Image](./image-for-notes/Volumes_comparision.png)
+   ![Example Image](./image-for-notes/Volumes_comparision%20.png)
   
