@@ -14,6 +14,7 @@ app.use('/feedback', express.static('feedback'));
 
 app.get('/', (req, res) => {
   const filePath = path.join(__dirname, 'pages', 'feedback.html');
+  console.log("test feedback")
   res.sendFile(filePath);
 });
 
@@ -26,6 +27,7 @@ app.post('/create', async (req, res) => {
   const title = req.body.title;
   const content = req.body.text;
 
+  console.log("TEST CREATE")
   const adjTitle = title.toLowerCase();
 
   const tempFilePath = path.join(__dirname, 'temp', adjTitle + '.txt');
