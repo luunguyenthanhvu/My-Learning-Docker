@@ -67,4 +67,7 @@
       - `-v /app/node_modules`
           + Tham số này mount một volume ẩn, điều này có nghĩa là Docker sẽ không ghi đè thư mục node_modules bên trong container bằng thư mục tương ứng từ máy host. Thư mục này sẽ được quản lý độc lập bên trong container, giúp tránh vấn đề về sự khác biệt môi trường giữa hệ thống host và container.
 </details>
+
+# Volume Comparison
+   ![Example Image](./image-for-notes/Volumes_comparision.png)
   
