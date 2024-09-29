@@ -5,25 +5,31 @@
   </summary>
 
   * Đặt bên trong docker file : `ENV PORT 80`
-  * Cập nhật env khi chạy: `docker run -d -p 3000:8000 -e PORT=8000 --rm --name feedback-app -v feedback:/app/feedback -v "C:\Users\PC\Desktop\Learning Docker\My-Learning-Docker\03 - Managing Data & Working with Volumes\data-volumes-02-added-dockerfile:/app" -v /app/node_modules feedback-node:volumes`
+  * Cập nhật env khi chạy: `docker run -d -p 3000:8000 -e PORT=8000 --rm --name feedback-app feedback-node:volumes`
       - `-e ` hoặc `--env`
   * Set up bằng file env: Tạo file env và đặt `PORT = 8000` bên trong
-      - `docker run -d -p 3000:8000 --env-file ./.env --rm --name feedback-app -v feedback:/app/feedback -v "C:\Users\PC\Desktop\Learning Docker\My-Learning-Docker\03 - Managing Data & Working with Volumes\data-volumes-02-added-dockerfile:/app" -v /app/node_modules feedback-node:volumes`
+      - `docker run -d -p 3000:8000 --env-file ./.env --rm --name feedback-app `
           + `./.env` : địa chỉ file 
-
-  * Giải thích:
-      - `-v feedback:/app/feedback`
-          + Cờ -v được sử dụng để mount (gắn) một volume. Volume là một cách để lưu trữ dữ liệu ngoài container, giúp dữ liệu không bị mất khi container bị xóa. Ở đây:
-            - `feedback`: là tên volume.
-            - `/app/feedback`: là thư mục trong container nơi volume được gắn vào.
-      - `-v "C:\Users\PC\Desktop\Learning Docker\My-Learning-Docker\03 - Managing Data & Working with Volumes\data-volumes-02-added-dockerfile:/app"`
-          + Đây là một volume khác, nhưng thay vì sử dụng volume của Docker, nó gắn thư mục trên máy tính host vào container. Cụ thể:
-            - `"C:\Users\PC\Desktop\Learning Docker\My-Learning-Docker\03 - Managing Data & Working with Volumes\data-volumes-02-added-dockerfile"`: là thư mục trên máy tính của bạn (Windows).
-            - `/app`: là thư mục trong container.
-          + Điều này có nghĩa là mọi thay đổi trong thư mục trên máy tính host sẽ tự động được phản ánh trong container tại thư mục `/app`, và ngược lại.
-      - `-v /app/node_modules`
-          + Tham số này mount một volume ẩn, điều này có nghĩa là Docker sẽ không ghi đè thư mục node_modules bên trong container bằng thư mục tương ứng từ máy host. Thư mục này sẽ được quản lý độc lập bên trong container, giúp tránh vấn đề về sự khác biệt môi trường giữa hệ thống host và container.
 </details>
+
+# Build Arguments (ARG)
+<details>
+  <summary>
+  <b>ARG trong docker: </b>
+  </summary>
+
+  * Khai báo `ARG` bên trong Dockerfile:
+      - Sử dụng cú pháp `ARG <arg_name>=<default_value>` để khai báo một biến có thể truyền vào lúc build:
+      - EX:  `ARG DEFAULT_PORT=80`
+
+  * Sử dụng ARG khi build image:
+      - Bạn có thể cung cấp giá trị cho ARG tại thời điểm build bằng cách sử dụng `--build-arg`:
+      - EX: `docker build -t feedback-node:dev --build-arg DEFAULT_PORT=8000 .`
+          + ARG chỉ tồn tại trong quá trình build và không được truyền vào container khi nó chạy.
+          + Biến này thường được sử dụng để tạo ra các image có thể tùy chỉnh cho nhiều trường hợp khác nhau, ví dụ như chạy trên các cổng khác nhau.
+ 
+</details>
+
 # Volumes trong Docker
 <details>
   <summary>
